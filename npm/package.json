@@ -1,7 +1,7 @@
 {
   "name": "@pordeno/ascii-font",
   "description": "Font made of ASCII characters",
-  "version": "1.0.2",
+  "version": "1.0.3",
 
   "repository": {
     "type": "git",

@@ -58,7 +58,6 @@ function pixelify ( text : string ){
 
             return upper
                 .map(( pair , index ) => [ pair , lower[ index ] ?? [ 0 , 0 ] ])
-                .map(( block ) => (console.log(block,block[0][0] * 8 + block[0][1] * 4 + block[1][0] * 2 + block[1][1],Blocks[block[0][0] * 8 + block[0][1] * 4 + block[1][0] * 2 + block[1][1]]),block))
                 .map(( block ) => block[0][0] * 8 + block[0][1] * 4 + block[1][0] * 2 + block[1][1] )
                 .map(( index ) => Blocks[ index ] )
                 .join('')

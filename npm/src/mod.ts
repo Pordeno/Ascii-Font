@@ -19,6 +19,7 @@ const Blocks = [
     '▌' ,
     '▙' ,
     '▀' ,
+    '▜' ,
     '▛' ,
     '█'
 ]
@@ -30,7 +31,7 @@ function pixelify ( text : string ){
     const characters = text
         .split('')
         .map(( character ) => Characters[ character ] ?? Default )
-    
+
     const lines = Array(11)
         .fill(null)
         .map(() => [] as Array<number> )
@@ -42,7 +43,7 @@ function pixelify ( text : string ){
 
     const chunks = lines
         .map(( line ) => chunk(line,2) )
-        
+
 
 
     const rows = chunk(chunks,2)
@@ -52,15 +53,15 @@ function pixelify ( text : string ){
 
             let [ upper , lower = [] ] = row
 
-            upper = upper.map(([ first , second = 0 ]) => [ first , second ] )
-            lower = lower.map(([ first , second = 0 ]) => [ first , second ] )
+            upper = upper.map(([ first , second ]) => [ first , second ?? 0 ] )
+            lower = lower.map(([ first , second ]) => [ first , second ?? 0 ] )
 
             return upper
-                .map(([ first , second = 0 ]) => [ first , second ] )
                 .map(( pair , index ) => [ pair , lower[ index ] ?? [ 0 , 0 ] ])
+                .map(( block ) => (console.log(block,block[0][0] * 8 + block[0][1] * 4 + block[1][0] * 2 + block[1][1],Blocks[block[0][0] * 8 + block[0][1] * 4 + block[1][0] * 2 + block[1][1]]),block))
                 .map(( block ) => block[0][0] * 8 + block[0][1] * 4 + block[1][0] * 2 + block[1][1] )
                 .map(( index ) => Blocks[ index ] )
-                .join('')   
+                .join('')
         })
         .join('\n')
 }

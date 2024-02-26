@@ -1,0 +1,33 @@
+{
+  "name": "@pordeno/ascii-font",
+  "description": "Font made of ASCII characters",
+  "version": "1.0.1",
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pordeno/Ascii-Font.git"
+  },
+  "license": "AGPLv3",
+  "bugs": {
+    "url": "https://github.com/Pordeno/Ascii-Font/issues"
+  },
+  "main": "./script/mod.js",
+  "module": "./esm/mod.js",
+  "exports": {
+    ".": {
+      "import": "./esm/mod.js",
+      "require": "./script/mod.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+},
+  "scripts": {
+    "test": "node test_runner.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "picocolors": "^1.0.0"
+  },
+  "_generatedBy": "dnt@0.40.0"
+}

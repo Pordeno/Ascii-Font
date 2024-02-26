@@ -1,5 +1,8 @@
 {
+    "version" : "1.0.1" ,
+
     "tasks" : {
+        "npm:publish" : "deno run -A .config/Tasks/NPM.ts $1 && cd npm && npm publish" ,
         "dev" : "deno run Source/App.ts"
     }
 }
